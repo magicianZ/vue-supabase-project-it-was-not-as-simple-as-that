@@ -33,9 +33,14 @@ const handleLogin = async () => {
         <div>
           <input class="inputField" required type="email" placeholder="Your email" v-model="email" />
           <input class="inputField" required type="password" placeholder="Password" v-model="password" />
-          <div>
+          <div id="agree">
             <input id="remember" name="remember" type="checkbox" onclick="validate()" />
-            <div id="terms"><p>By checking this box, I agree to the </p><a target="_blank" href="https://en.wikipedia.org/wiki/Terms_and_Conditions_May_Apply">Terms and Conditions</a></div>
+            <div id="terms">
+              <p>By checking this box, I agree to the </p>
+              <div id="mid">
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Terms_and_Conditions_May_Apply">Terms and Conditions</a>
+              </div>
+              </div>
           </div>
           
         </div>
@@ -52,7 +57,15 @@ const handleLogin = async () => {
   </template>
 
 <style scoped>
+  #agree{
+    display: flex;
+  }
  #terms{
   display: flex;
+ }
+ #mid{
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
  }
 </style>
