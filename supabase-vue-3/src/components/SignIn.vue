@@ -9,12 +9,11 @@ const password = ref('')
 const handleLogin = async () => {
   try {
     loading.value = true
-    const { error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signInWithPassword({
       email: email.value,
       password: password.value,
     })
     if (error) throw error
-    alert('Check your email for the login link!')
   } catch (error) {
     if (error instanceof Error) {
       alert(error.message)
@@ -30,7 +29,7 @@ const handleLogin = async () => {
     <form class="row flex-center flex" @submit.prevent="handleLogin">
       <div class="col-6 form-widget">
         <h1 class="header">Supabase + Vue 3</h1>
-        <p class="description">Sign in via magic link with your email below</p>
+        <p class="description">Sign in</p>
         <div>
           <input class="inputField" required type="email" placeholder="Your email" v-model="email" />
           <input class="inputField" required type="password" placeholder="Password" v-model="password" />
