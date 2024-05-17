@@ -28,8 +28,7 @@ const handleLogin = async () => {
 <template>
     <form class="row flex-center flex" @submit.prevent="handleLogin">
       <div class="col-6 form-widget">
-        <h1 class="header">Supabase + Vue 3</h1>
-        <p class="description">Sign up</p>
+        <h1 class="header">Sign Up</h1>
         <div>
           <input class="inputField" required type="email" placeholder="Your email" v-model="email" />
           <input class="inputField" required type="password" placeholder="Password" v-model="password" />
@@ -48,7 +47,7 @@ const handleLogin = async () => {
           <input
             type="submit"
             class="button block"
-            :value="loading ? 'Loading' : 'Send magic link'"
+            :value="loading ? 'Loading' : 'Sign Up'"
             :disabled="loading"
           />
         </div>
