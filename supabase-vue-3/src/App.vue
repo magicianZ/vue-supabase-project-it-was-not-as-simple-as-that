@@ -4,6 +4,7 @@ import Account from './components/Account.vue'
 import SignUp from './components/SignUp.vue'
 import { supabase } from './supabase'
 import SignIn from './components/SignIn.vue';
+import { RouterLink, RouterView } from 'vue-router'
 
 const session = ref()
 
