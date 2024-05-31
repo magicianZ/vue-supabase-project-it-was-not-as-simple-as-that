@@ -1,13 +1,9 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import Account from './components/Account.vue'
-import SignUp from './components/SignUp.vue'
-import { supabase } from './supabase'
-import SignIn from './components/SignIn.vue';
-import { RouterLink, RouterView } from 'vue-router'
-import LoginPage from './views/LoginPage.vue';
-import MainMenu from './views/MainMenu.vue';
-
+import SignIn from '../components/SignIn.vue';
+import SignUp from '../components/SignUp.vue';
+import Account from '../components/Account.vue'
+import { supabase } from '../supabase';
 const session = ref()
 
 onMounted(() => {
@@ -19,7 +15,7 @@ onMounted(() => {
     session.value = _session
   })
 
-  document.getElementById("defaultopen").click();
+  
 })
 
 function openCity(evt, target) {
@@ -45,8 +41,27 @@ function openCity(evt, target) {
 </script>
 
 <template>
-  <MainMenu v-if="session" :session="session"/>
-  <LoginPage v-else/>
+  <div class="container" style="padding: 50px 0 100px 0">
+   <div>
+      <div class="tab">
+      <button class="tablinks" id="defaultopen" @click="openCity(event, 'signin')">Sign In</button>
+      <button class="tablinks" @click="openCity(event, 'signup')">Sign Up</button>
+    </div>
+      <div id="signin" class="tabcontent">
+        <SignIn/>
+      </div>
+
+      <div id="signup" class="tabcontent">
+        <SignUp/>
+      </div>
+    </div>
+    
+  
+
+
+<!-- Tab content -->
+
+  </div>
 </template>
 
 <style scoped>
