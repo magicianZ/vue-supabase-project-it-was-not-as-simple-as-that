@@ -8,9 +8,5 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-     <div>
-     <RouterLink to="/">Menu</RouterLink>
-     </div>
-
-<RouterView/>
+    <Account/>
 </template>
