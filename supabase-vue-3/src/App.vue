@@ -45,7 +45,10 @@ function openCity(evt, target) {
 </script>
 
 <template>
+
   <MainMenu v-if="session" :session="session"/>
+
+  
   <LoginPage v-else/>
 </template>
 
