@@ -3,5 +3,5 @@
 </script>
 
 <template>
-<p>hello</p>
+<p>get started</p>
 </template>

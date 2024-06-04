@@ -1,29 +1,32 @@
 <script setup>
 import { supabase } from '../supabase';
 import {onMounted} from 'vue'
-import { ref } from 'vue';
-
-let characters = ref([])
-let people = []
-async function call(){
-    const {data} = await supabase
-    .from('characters')
-    .select()
-
-    characters = data
-}
+import CharacterCard from '../components/CharacterCard.vue';
+import {characters} from '../main.js'
+import Account from '../components/Account.vue';
 
 
 
 onMounted(()=>{
-    call()
+    console.log(characters)
 })
 
-console.log(characters)
+
 
 
 </script>
 
 <template>
-    hello
+    <div id="flexbox">
+    <CharacterCard v-for="item in characters" :key="item.name" :Character="item"/>
+    </div>
 </template>
+
+<style scoped>
+#flexbox{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+</style>
