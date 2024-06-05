@@ -13,14 +13,26 @@ export const characters = []
 let people = []
 async function call(){
     let {data} = await supabase
-    .from('characters')
+  .from('characters')  
     .select()
 
     data.forEach((i)=>{
-        console.log(i)
         characters.push(i)
     })
 }
 
+
 call()
 console.log(characters)
+
+export const profile = []
+async function call2(){
+    let {data} = await supabase
+    .from('profiles')  
+    .select()
+    data.forEach((i)=>{
+        profile.push(i)
+    })
+}
+
+call2()

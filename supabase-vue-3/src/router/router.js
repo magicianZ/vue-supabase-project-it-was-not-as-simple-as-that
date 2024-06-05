@@ -22,6 +22,11 @@ const router = createRouter({
       name: 'test',
       component: () => import('../views/ModalTest.vue')
     },
+    {
+      path: '/gacha',
+      name: 'gacha',
+      component: () => import('../views/GachaPull.vue')
+    },
 ]
 })
 

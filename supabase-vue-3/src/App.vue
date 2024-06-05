@@ -31,7 +31,9 @@ onMounted(() => {
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/index">Index</RouterLink>
     <RouterLink to="/test">tesing</RouterLink>
+    <RouterLink to="/gacha">pull</RouterLink>
     <RouterView/>
+    
   </div>
   <LoginPage v-else/>
 </template>
