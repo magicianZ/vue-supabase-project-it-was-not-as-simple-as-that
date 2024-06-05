@@ -30,6 +30,7 @@ onMounted(() => {
   <div v-if="session" :session="session">
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/index">Index</RouterLink>
+    <RouterLink to="/test">tesing</RouterLink>
     <RouterView/>
   </div>
   <LoginPage v-else/>
