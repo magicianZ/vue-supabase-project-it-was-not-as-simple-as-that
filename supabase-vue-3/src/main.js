@@ -25,8 +25,9 @@ async function call(){
 call()
 console.log(characters)
 
-export const profile = []
-async function call2(){
+export let profile = []
+async function grabprofile(){
+    profile = []
     let {data} = await supabase
     .from('profiles')  
     .select()
@@ -35,4 +36,7 @@ async function call2(){
     })
 }
 
-call2()
+
+
+grabprofile()
+
