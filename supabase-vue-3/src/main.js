@@ -10,8 +10,14 @@ createApp(App)
 .mount('#app')
 
 export const characters = []
-let people = []
-async function call(){
+export const weapons = []
+export const characterfive = []
+export const weaponfive = []
+export const fourstar = []
+export const threestar = []
+export let profile = []
+
+async function callcharacter(){
     let {data} = await supabase
   .from('characters')  
     .select()
@@ -19,13 +25,25 @@ async function call(){
     data.forEach((i)=>{
         characters.push(i)
     })
+    characterfive.push(data.filter((i)=> i.rarity === 5))
+    fourstar.push(data.filter((i)=> i.rarity === 4))
 }
 
+async function callweapon(){
+    let {data} = await supabase
+    .from('weapons')  
+    .select()
 
-call()
-console.log(characters)
+    console.log(data)
+    data.forEach((i)=>{
+        console.log(i)
+        weapons.push(i)
+    })
+    weaponfive.push(data.filter((i)=> i.rarity === 5))
+    fourstar.push(data.filter((i)=> i.rarity === 4))
+    threestar.push(data.filter((i)=> i.rarity === 3))
+}
 
-export let profile = []
 async function grabprofile(){
     profile = []
     let {data} = await supabase
@@ -36,7 +54,9 @@ async function grabprofile(){
     })
 }
 
-
-
+callweapon()
+callcharacter()
 grabprofile()
+
+
 
