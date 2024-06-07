@@ -14,16 +14,18 @@ const session = ref()
 
 
 onMounted(() => {
-
   supabase.auth.getSession().then(({ data }) => {
     session.value = data.session
   })
 
   supabase.auth.onAuthStateChange((_, _session) => {
-    session.value = session
+    session.value = _session
   })
-
 })
+
+async function signout(){
+  const {error} = await supabase.auth.signOut()
+}
 
 </script>
 
@@ -37,7 +39,7 @@ onMounted(() => {
     <RouterLink id="router" to="/gacha">pull</RouterLink>
     </div>
     <div id="money">
-      <h3 v-for="thing in profile" :key="forceupdate"></h3>
+      <button @click="signout()">bye bye</button>
     </div>
     </div>
     <RouterView/>
