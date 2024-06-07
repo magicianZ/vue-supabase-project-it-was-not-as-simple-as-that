@@ -33,16 +33,16 @@ async function callweapon(){
     let {data} = await supabase
     .from('weapons')  
     .select()
-
     console.log(data)
     data.forEach((i)=>{
-        console.log(i)
         weapons.push(i)
     })
     weaponfive.push(data.filter((i)=> i.rarity === 5))
     fourstar.push(data.filter((i)=> i.rarity === 4))
     threestar.push(data.filter((i)=> i.rarity === 3))
 }
+
+
 
 async function grabprofile(){
     profile = []

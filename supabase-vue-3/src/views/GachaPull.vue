@@ -6,7 +6,7 @@
         <h2 id="pity" v-for="data in profile" :key="forceupdate">{{data.pitycountfour}}</h2>
     </div>
     <div v-if="on" id="results">
-        <h2 v-for="entry in pullresult" :key="entry">{{ entry }}</h2>
+        <PullResults v-for="entry in pullresult" :Result="entry"/>
         <button v-on:click="hide()">Close</button>
     </div>
 </template>
@@ -51,7 +51,7 @@ function hide(){
 
 let pullresult = []
 function wishcharacter(amount){
-    pullresult.length=0
+    pullresult.length=0 
     let pityfive = profile[0].pitycountfive
     let pityfour = profile[0].pitycountfour
     for(let i=0 ; i<amount ; i++){
@@ -105,5 +105,12 @@ function drawthree(){
 </script>
 
 <style scoped>
-
+ #results{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 220px;
+ }
 </style>

@@ -6,7 +6,7 @@
 
 <template>
     <div id="card">
-        <h3>{{ Result }}</h3>
+        <h3>{{ Result.name }}</h3>
         <img id="img" v-bind:src="Result.smallimg">
     </div>
 </template>
@@ -14,16 +14,17 @@
 
 
 <style scoped>
- #card{
-    flex-direction: column;
-    display: flex;
-    position: relative;
-    height: 100px;
-    width: 100px;
-    border: 10px;
-    margin: 10px;
-    border: 10px black;
- }
+#card{
+    width: 200px;
+    height: 200px;
+    background-color: #a0cec6;
+    position: relative
+}
+
+#img{
+    width: 100%;
+    position: absolute;
+}
 
 
 </style>

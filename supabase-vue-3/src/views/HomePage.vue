@@ -19,6 +19,14 @@
     update.value += 1
     console.log(profile)
     }
+
+    async function callweapon(){
+    let {data} = await supabase
+    .from('weapons')  
+    .select()
+
+    console.log(data)
+}
 </script>
 
 <template>
@@ -27,4 +35,5 @@
 <button @click="cash()">
     get cash
 </button>
+<button @click="callweapon">test</button>
 </template>
